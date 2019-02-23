@@ -8,13 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		225381D62213314E002C7EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381D52213314E002C7EB4 /* AppDelegate.swift */; };
-		225381D82213314E002C7EB4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381D72213314E002C7EB4 /* FirstViewController.swift */; };
-		225381DA2213314E002C7EB4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381D92213314E002C7EB4 /* SecondViewController.swift */; };
+		225381D82213314E002C7EB4 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381D72213314E002C7EB4 /* PackageViewController.swift */; };
+		225381DA2213314E002C7EB4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381D92213314E002C7EB4 /* ProfileViewController.swift */; };
 		225381DD2213314E002C7EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225381DB2213314E002C7EB4 /* Main.storyboard */; };
 		225381DF2213314F002C7EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225381DE2213314F002C7EB4 /* Assets.xcassets */; };
 		225381E22213314F002C7EB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225381E02213314F002C7EB4 /* LaunchScreen.storyboard */; };
 		225381ED2213314F002C7EB4 /* TravelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381EC2213314F002C7EB4 /* TravelAppTests.swift */; };
 		225381F82213314F002C7EB4 /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381F72213314F002C7EB4 /* TravelAppUITests.swift */; };
+		22A11BFA2216B5E30017ADBF /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22A11BF92216B5E20017ADBF /* credentials.plist */; };
+		22A11BFC22170BDA0017ADBF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */; };
+		22A11BFE22170C230017ADBF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A11BFD22170C230017ADBF /* MainViewController.swift */; };
+		22A8BA6E221AD8B7001AF8A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */; };
+		22BB7597221BDC230073792A /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB7596221BDC230073792A /* PackageDetailViewController.swift */; };
+		22BF5F0822141A4D0019E800 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */; };
+		22F0438322185B53002E8002 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438222185B53002E8002 /* FacebookCore.framework */; };
+		22F0438522185B53002E8002 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438422185B53002E8002 /* FacebookLogin.framework */; };
+		22F0438722185B53002E8002 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438622185B53002E8002 /* FacebookShare.framework */; };
+		22FC4E17221E927D001B84B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC4E16221E927D001B84B3 /* SearchViewController.swift */; };
+		E130F3B5088AD2DD8075BE5E /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EAACD42E38D4B7EC36BD49 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2144A087FF706B6AD362A22E /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		225381D22213314E002C7EB4 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225381D52213314E002C7EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		225381D72213314E002C7EB4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		225381D92213314E002C7EB4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		225381D72213314E002C7EB4 /* PackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
+		225381D92213314E002C7EB4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		225381DC2213314E002C7EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		225381DE2213314F002C7EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		225381E12213314F002C7EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +61,19 @@
 		225381F32213314F002C7EB4 /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225381F72213314F002C7EB4 /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
 		225381F92213314F002C7EB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22A11BF92216B5E20017ADBF /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
+		22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		22A11BFD22170C230017ADBF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		22BB7596221BDC230073792A /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
+		22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		22F0438222185B53002E8002 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F0438422185B53002E8002 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F0438622185B53002E8002 /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F0438822186887002E8002 /* TravelApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelApp.entitlements; sourceTree = "<group>"; };
+		22FC4E16221E927D001B84B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A9BC06D6359A74CD5B45A03B /* Pods-TravelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C8EAACD42E38D4B7EC36BD49 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F0438322185B53002E8002 /* FacebookCore.framework in Frameworks */,
+				22F0438522185B53002E8002 /* FacebookLogin.framework in Frameworks */,
+				22F0438722185B53002E8002 /* FacebookShare.framework in Frameworks */,
+				E130F3B5088AD2DD8075BE5E /* Pods_TravelApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +112,8 @@
 				225381EB2213314F002C7EB4 /* TravelAppTests */,
 				225381F62213314F002C7EB4 /* TravelAppUITests */,
 				225381D32213314E002C7EB4 /* Products */,
+				EE5425A24A1ACC9890FAD955 /* Pods */,
+				E936DA243DBB1F6D50B4F961 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +130,17 @@
 		225381D42213314E002C7EB4 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
+				22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */,
+				22F0438822186887002E8002 /* TravelApp.entitlements */,
+				22A11BF92216B5E20017ADBF /* credentials.plist */,
+				22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */,
 				225381D52213314E002C7EB4 /* AppDelegate.swift */,
-				225381D72213314E002C7EB4 /* FirstViewController.swift */,
-				225381D92213314E002C7EB4 /* SecondViewController.swift */,
+				225381D72213314E002C7EB4 /* PackageViewController.swift */,
+				225381D92213314E002C7EB4 /* ProfileViewController.swift */,
+				22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */,
+				22A11BFD22170C230017ADBF /* MainViewController.swift */,
+				22BB7596221BDC230073792A /* PackageDetailViewController.swift */,
+				22FC4E16221E927D001B84B3 /* SearchViewController.swift */,
 				225381DB2213314E002C7EB4 /* Main.storyboard */,
 				225381DE2213314F002C7EB4 /* Assets.xcassets */,
 				225381E02213314F002C7EB4 /* LaunchScreen.storyboard */,
@@ -128,6 +167,26 @@
 			path = TravelAppUITests;
 			sourceTree = "<group>";
 		};
+		E936DA243DBB1F6D50B4F961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F0438222185B53002E8002 /* FacebookCore.framework */,
+				22F0438422185B53002E8002 /* FacebookLogin.framework */,
+				22F0438622185B53002E8002 /* FacebookShare.framework */,
+				C8EAACD42E38D4B7EC36BD49 /* Pods_TravelApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE5425A24A1ACC9890FAD955 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC06D6359A74CD5B45A03B /* Pods-TravelApp.debug.xcconfig */,
+				2144A087FF706B6AD362A22E /* Pods-TravelApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 225381FC2213314F002C7EB4 /* Build configuration list for PBXNativeTarget "TravelApp" */;
 			buildPhases = (
+				B25894C1CAA61964E4AD13CA /* [CP] Check Pods Manifest.lock */,
 				225381CE2213314E002C7EB4 /* Sources */,
 				225381CF2213314E002C7EB4 /* Frameworks */,
 				225381D02213314E002C7EB4 /* Resources */,
+				752747D401B59637501B7327 /* [CP] Copy Pods Resources */,
+				33BD17BCCC45C57F21FAE9FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +258,11 @@
 				TargetAttributes = {
 					225381D12213314E002C7EB4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					225381E72213314F002C7EB4 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -234,6 +301,7 @@
 			files = (
 				225381E22213314F002C7EB4 /* LaunchScreen.storyboard in Resources */,
 				225381DF2213314F002C7EB4 /* Assets.xcassets in Resources */,
+				22A11BFA2216B5E30017ADBF /* credentials.plist in Resources */,
 				225381DD2213314E002C7EB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,14 +322,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33BD17BCCC45C57F21FAE9FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelApp/Pods-TravelApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelApp/Pods-TravelApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		752747D401B59637501B7327 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelApp/Pods-TravelApp-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelApp/Pods-TravelApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B25894C1CAA61964E4AD13CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		225381CE2213314E002C7EB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225381DA2213314E002C7EB4 /* SecondViewController.swift in Sources */,
+				225381DA2213314E002C7EB4 /* ProfileViewController.swift in Sources */,
 				225381D62213314E002C7EB4 /* AppDelegate.swift in Sources */,
-				225381D82213314E002C7EB4 /* FirstViewController.swift in Sources */,
+				22A11BFC22170BDA0017ADBF /* DashboardViewController.swift in Sources */,
+				22FC4E17221E927D001B84B3 /* SearchViewController.swift in Sources */,
+				22A11BFE22170C230017ADBF /* MainViewController.swift in Sources */,
+				22BF5F0822141A4D0019E800 /* CollectionViewCell.swift in Sources */,
+				22A8BA6E221AD8B7001AF8A4 /* TableViewCell.swift in Sources */,
+				22BB7597221BDC230073792A /* PackageDetailViewController.swift in Sources */,
+				225381D82213314E002C7EB4 /* PackageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,10 +579,13 @@
 		};
 		225381FD2213314F002C7EB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9BC06D6359A74CD5B45A03B /* Pods-TravelApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28TNF4QZU2;
 				INFOPLIST_FILE = TravelApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,10 +599,13 @@
 		};
 		225381FE2213314F002C7EB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2144A087FF706B6AD362A22E /* Pods-TravelApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28TNF4QZU2;
 				INFOPLIST_FILE = TravelApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

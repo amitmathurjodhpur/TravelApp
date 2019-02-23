@@ -1,0 +1,9 @@
+target "TravelApp" do
+
+use_frameworks!
+
+pod 'GoogleSignIn'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+end

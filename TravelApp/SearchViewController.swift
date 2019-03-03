@@ -60,7 +60,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         cell.packageImage.image=packageImageArray[indexPath.row]
-        cell.packageNameLabel.text="Ha Long Bay"
+        cell.packageNameLabel.text="HA LONG BAY"
         let separatorLineView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 10))
         /// change size as you need.
         separatorLineView.backgroundColor = UIColor.groupTableViewBackground
@@ -70,7 +70,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

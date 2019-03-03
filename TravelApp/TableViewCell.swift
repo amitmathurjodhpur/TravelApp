@@ -15,10 +15,10 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var packageNameLabel: UILabel!
     
+    @IBOutlet weak var destinationName: UILabel!
     
-    @IBOutlet weak var ratingImageView: UIImageView!
-    
-    
+    @IBOutlet weak var destinationDescriptionLabel: UILabel!
+    @IBOutlet weak var detailDestinationImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -19,8 +19,11 @@
 		22A11BFC22170BDA0017ADBF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */; };
 		22A11BFE22170C230017ADBF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A11BFD22170C230017ADBF /* MainViewController.swift */; };
 		22A8BA6E221AD8B7001AF8A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */; };
+		22B22F2E2228FC24000AF62B /* BookingNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B22F2D2228FC24000AF62B /* BookingNextViewController.swift */; };
 		22BB7597221BDC230073792A /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB7596221BDC230073792A /* PackageDetailViewController.swift */; };
 		22BF5F0822141A4D0019E800 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */; };
+		22C50350222BFA3B00CDFE40 /* FinalBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5034F222BFA3B00CDFE40 /* FinalBookingViewController.swift */; };
+		22D68669222667C2006B8508 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D68668222667C2006B8508 /* BookingViewController.swift */; };
 		22F0438322185B53002E8002 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438222185B53002E8002 /* FacebookCore.framework */; };
 		22F0438522185B53002E8002 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438422185B53002E8002 /* FacebookLogin.framework */; };
 		22F0438722185B53002E8002 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438622185B53002E8002 /* FacebookShare.framework */; };
@@ -65,8 +68,11 @@
 		22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		22A11BFD22170C230017ADBF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		22B22F2D2228FC24000AF62B /* BookingNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNextViewController.swift; sourceTree = "<group>"; };
 		22BB7596221BDC230073792A /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
 		22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		22C5034F222BFA3B00CDFE40 /* FinalBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalBookingViewController.swift; sourceTree = "<group>"; };
+		22D68668222667C2006B8508 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		22F0438222185B53002E8002 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F0438422185B53002E8002 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F0438622185B53002E8002 /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +147,9 @@
 				22A11BFD22170C230017ADBF /* MainViewController.swift */,
 				22BB7596221BDC230073792A /* PackageDetailViewController.swift */,
 				22FC4E16221E927D001B84B3 /* SearchViewController.swift */,
+				22D68668222667C2006B8508 /* BookingViewController.swift */,
+				22B22F2D2228FC24000AF62B /* BookingNextViewController.swift */,
+				22C5034F222BFA3B00CDFE40 /* FinalBookingViewController.swift */,
 				225381DB2213314E002C7EB4 /* Main.storyboard */,
 				225381DE2213314F002C7EB4 /* Assets.xcassets */,
 				225381E02213314F002C7EB4 /* LaunchScreen.storyboard */,
@@ -402,12 +411,15 @@
 			files = (
 				225381DA2213314E002C7EB4 /* ProfileViewController.swift in Sources */,
 				225381D62213314E002C7EB4 /* AppDelegate.swift in Sources */,
+				22C50350222BFA3B00CDFE40 /* FinalBookingViewController.swift in Sources */,
 				22A11BFC22170BDA0017ADBF /* DashboardViewController.swift in Sources */,
 				22FC4E17221E927D001B84B3 /* SearchViewController.swift in Sources */,
 				22A11BFE22170C230017ADBF /* MainViewController.swift in Sources */,
 				22BF5F0822141A4D0019E800 /* CollectionViewCell.swift in Sources */,
 				22A8BA6E221AD8B7001AF8A4 /* TableViewCell.swift in Sources */,
+				22B22F2E2228FC24000AF62B /* BookingNextViewController.swift in Sources */,
 				22BB7597221BDC230073792A /* PackageDetailViewController.swift in Sources */,
+				22D68669222667C2006B8508 /* BookingViewController.swift in Sources */,
 				225381D82213314E002C7EB4 /* PackageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

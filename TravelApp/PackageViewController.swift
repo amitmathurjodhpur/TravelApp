@@ -13,6 +13,7 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var destinationNameScrollView: UIScrollView!
     @IBOutlet weak var packageCollectionView: UICollectionView!
     var packageImageArray=[#imageLiteral(resourceName: "img7"),#imageLiteral(resourceName: "img3"),#imageLiteral(resourceName: "img5"),#imageLiteral(resourceName: "img1"),#imageLiteral(resourceName: "img2"),#imageLiteral(resourceName: "img4"),#imageLiteral(resourceName: "img6")]
     
@@ -28,26 +29,20 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.isScrollEnabled=true
+        destinationNameScrollView.isScrollEnabled=true
     }
     @IBAction func searchTapped(_ sender: Any) {
         if let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController {
             self.definesPresentationContext = true
-          // searchVC.modalTransitionStyle = .cov
-//            let transition = CATransition()
-//            transition.duration = 0.3
-//            transition.type = kCATransitionPush
-//            transition.subtype = kCATransitionFromRight
-//            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-//            view.window!.layer.add(transition, forKey: kCATransition)
-           searchVC.modalPresentationStyle = .overCurrentContext
+            searchVC.modalPresentationStyle = .overCurrentContext
             self.present(searchVC, animated: true, completion: nil)
-            //self.navigationController?.pushViewController(searchVC, animated: true)
 
         }
         
     }
     override func viewDidLayoutSubviews() {
-         scrollView.contentSize=CGSize(width: self.view.frame.width, height: self.view.frame.height+500)
+         scrollView.contentSize=CGSize(width: scrollView.frame.width, height: self.view.frame.height+500)
+        destinationNameScrollView.contentSize=CGSize(width: destinationNameScrollView.frame.width+500, height: destinationNameScrollView.frame.height)
     }
     // Mark: UITableView Delegate & Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,11 +51,16 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         cell.packageImage.image=packageImageArray[indexPath.row]
-        cell.packageNameLabel.text=destinationNames[indexPath.row]
+        cell.packageNameLabel.text="HA LONG BAY"
+        let separatorLineView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 10))
+        /// change size as you need.
+        separatorLineView.backgroundColor = self.view.backgroundColor
+        // you can also put image here
+        cell.contentView.addSubview(separatorLineView)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 90
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -81,7 +81,7 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
             cell.packageImageView.image=packageImageArray[indexPath.row]
         } else {
             cell.destinationImageView.image=destinationImageArray[indexPath.row]
-            cell.destinationNameLabel.text=destinationNames[indexPath.row]
+           // cell.destinationNameLabel.text=destinationNames[indexPath.row]
         }
         return cell
     }
@@ -89,7 +89,10 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
         if collectionView.tag == 1 {
             if let packageDetail = self.storyboard?.instantiateViewController(withIdentifier: "PackageDetailViewController") as? PackageDetailViewController {
                 packageDetail.packageImage=packageImageArray[indexPath.row]
-                self.navigationController?.pushViewController(packageDetail, animated: true)
+                self.definesPresentationContext = true
+                packageDetail.modalPresentationStyle = .overCurrentContext
+               // self.navigationController?.pushViewController(packageDetail, animated: true)
+                self.present(packageDetail, animated: false, completion: nil)
             }
         }
     }

@@ -19,10 +19,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var packageRate: UILabel!
     
     
-    @IBOutlet weak var destinationNameLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var destinationImageView: UIImageView!
     
     

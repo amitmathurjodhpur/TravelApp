@@ -10,41 +10,47 @@ import UIKit
 
 class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
     
+    @IBOutlet weak var packageNameLbl: UILabel!
     @IBOutlet weak var selectedPackageImageView: UIImageView!
-    var packageImage:UIImage!
+    var packageImagePath: String = ""
+    var duration: String = ""
+    var rating: String = ""
     var pickerView:UIPickerView!
     var datePickerView:UIDatePicker!
     var pickerData=["5 DAYS/ 4 NIGHTS","4 DAYD/ 3 NIGHTS","3 DAYS/ 2 NIGHTS","2 DAYS/ 1 NIGHTS"]
     var tapGesture = UITapGestureRecognizer()
+    let fullStarImage = UIImage(named: "Star gold.png")
+    let emptyStarImage = UIImage(named: "Star.png")
     @IBOutlet weak var durationTextBox: UITextField!
-    
     @IBOutlet weak var adultTextField: UITextField!
-    
     @IBOutlet weak var hotelOptionLabel: UILabel!
     @IBOutlet weak var childrenTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
-    
     @IBOutlet weak var standardButton: UIButton!
     @IBOutlet weak var superiorButton: UIButton!
     @IBOutlet weak var deluxeButton: UIButton!
-    
     @IBOutlet weak var nextView: UIView!
     
+    @IBOutlet weak var durationLbl: UILabel!
+    @IBOutlet weak var star5Img: UIImageView!
+    @IBOutlet weak var star4Img: UIImageView!
+    @IBOutlet weak var star2Img: UIImageView!
+    @IBOutlet weak var star3Img: UIImageView!
+    @IBOutlet weak var star1Img: UIImageView!
     //MARK: - View Did Load
     override func viewDidLoad() {
-        selectedPackageImageView.image=packageImage
-       self.pickerView = UIPickerView(frame:CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.size.width, height: 216))
-        self.datePickerView=UIDatePicker(frame: CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.width, height: 216))
+        
+       
         adultTextField.keyboardType=UIKeyboardType.numberPad
         childrenTextField.keyboardType=UIKeyboardType.numberPad
         let toolBar=UIToolbar()
         toolBar.sizeToFit()
-        let doneButton=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        let doneButton=UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
         toolBar.setItems([doneButton], animated: false)
         adultTextField.inputAccessoryView=toolBar
         childrenTextField.inputAccessoryView=toolBar
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         //Tap Gesture
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(BookingViewController.nextViewTapped(_:)))
         tapGesture.numberOfTapsRequired = 1
@@ -76,7 +82,7 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         if button.backgroundColor != UIColor.white
         {
             let currentColor:UIColor!=button.backgroundColor
-            
+
             //  currentColor=button.backgroundColor
             switch button {
             case deluxeButton:
@@ -112,8 +118,26 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
   
         
     //MARK: - CUSTOM METHODS
+    func setUpUI() {
+        selectedPackageImageView.sd_setImage(with: URL(string: packageImagePath), placeholderImage: UIImage(named: "placeholder.png"))
+              self.pickerView = UIPickerView(frame:CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.size.width, height: 216))
+               self.datePickerView=UIDatePicker(frame: CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.width, height: 216))
+        
+        for (index, imageView) in [star1Img, star2Img, star3Img, star4Img, star5Img].enumerated() {
+            imageView?.image = getStarImage(starNumber: Int(index + 1), forRating: Int(rating)!)
+        }
+        let dur = Int(duration)
+        if dur == 1 {
+            durationLbl.text = "\(dur ?? 0)DAY"
+        } else {
+            durationLbl.text = "\(dur ?? 0)DAYS/\((dur ?? 0)-1)NIGHTS"
+        }
+    }
     func pickUp(){
         // UIPickerView
+        if self.view.frame.origin.y != 0 {
+            self.view.endEditing(true)
+        }
         if datePickerView.isDescendant(of: self.view)
         {
             datePickerView.removeFromSuperview()
@@ -131,6 +155,9 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     }
     
     func datePickerUp() {
+        if self.view.frame.origin.y != 0 {
+            self.view.endEditing(true)
+        }
         if pickerView.isDescendant(of: self.view)
         {
             pickerView.removeFromSuperview()
@@ -142,11 +169,8 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         else
         {
             self.datePickerView?.backgroundColor = UIColor.white
-            self.datePickerView?.datePickerMode = UIDatePickerMode.date
-            datePickerView.addTarget(self, action: #selector(BookingViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
-            //  self.datePickerView.addTarget(self, action: #selector(datePickerValueChanged(picker:)), for: .valueChanged)
-            
-            // datePickerView.addTarget(self, action: Selector("datePickerValueChanged"), for: .valueChanged)
+            self.datePickerView?.datePickerMode = UIDatePicker.Mode.date
+            datePickerView.addTarget(self, action: #selector(BookingViewController.datePickerValueChanged), for: UIControl.Event.valueChanged)
             view.addSubview(self.datePickerView)
             dateTextField.inputView=self.datePickerView
             
@@ -168,16 +192,16 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
        
     }
     @objc func nextViewTapped(_ sender: UITapGestureRecognizer) {
-        if let BookingVC = self.storyboard?.instantiateViewController(withIdentifier: "BookingNextViewController") as? BookingNextViewController {
-            BookingVC.packageImage=packageImage
-            self.present(BookingVC, animated: true, completion: nil)
+        if let BookingNextVC = self.storyboard?.instantiateViewController(withIdentifier: "BookingNextViewController") as? BookingNextViewController {
+            BookingNextVC.packageImagePath = packageImagePath
+            self.present(BookingNextVC, animated: true, completion: nil)
         }
     }
    /*
  MARK:- KEYBOARD METHODS
  */
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
             }
@@ -212,27 +236,26 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         if (textField.tag==1||textField.tag==2)
         {
            textField.clearsOnBeginEditing=true
+            if datePickerView.isDescendant(of: self.view)
+            {
+                datePickerView.removeFromSuperview()
+            }
+            if pickerView.isDescendant(of: self.view){
+                pickerView.removeFromSuperview()
+            }
         }
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: getStarImage
+    func getStarImage(starNumber: Int, forRating rating: Int) -> UIImage {
+        if rating >= starNumber {
+            return fullStarImage ?? UIImage()
+        } else {
+            return emptyStarImage ?? UIImage()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

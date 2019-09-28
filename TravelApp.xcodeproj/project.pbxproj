@@ -15,19 +15,38 @@
 		225381E22213314F002C7EB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225381E02213314F002C7EB4 /* LaunchScreen.storyboard */; };
 		225381ED2213314F002C7EB4 /* TravelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381EC2213314F002C7EB4 /* TravelAppTests.swift */; };
 		225381F82213314F002C7EB4 /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225381F72213314F002C7EB4 /* TravelAppUITests.swift */; };
+		228001DA2289753900F1C918 /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228001D92289753900F1C918 /* FeaturedCollectionViewCell.swift */; };
+		2290EFD922579F36008191D9 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290EFD822579F36008191D9 /* APIUrl.swift */; };
+		2290EFDB2257A234008191D9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290EFDA2257A234008191D9 /* DataManager.swift */; };
+		2290EFDD2257A609008191D9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290EFDC2257A609008191D9 /* ActivityIndicator.swift */; };
 		22A11BFA2216B5E30017ADBF /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22A11BF92216B5E20017ADBF /* credentials.plist */; };
 		22A11BFC22170BDA0017ADBF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */; };
 		22A11BFE22170C230017ADBF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A11BFD22170C230017ADBF /* MainViewController.swift */; };
 		22A8BA6E221AD8B7001AF8A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */; };
 		22B22F2E2228FC24000AF62B /* BookingNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B22F2D2228FC24000AF62B /* BookingNextViewController.swift */; };
 		22BB7597221BDC230073792A /* PackageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB7596221BDC230073792A /* PackageDetailViewController.swift */; };
+		22BD197F224A45190041266A /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD197E224A45190041266A /* MyTripsViewController.swift */; };
 		22BF5F0822141A4D0019E800 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */; };
+		22C01A3A2242162600A82E31 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A302242162400A82E31 /* Montserrat-Bold.otf */; };
+		22C01A3B2242162600A82E31 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A312242162400A82E31 /* Montserrat-SemiBold.otf */; };
+		22C01A3C2242162600A82E31 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A322242162400A82E31 /* Montserrat-Thin.ttf */; };
+		22C01A3D2242162600A82E31 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A332242162500A82E31 /* Montserrat-Light.otf */; };
+		22C01A3E2242162600A82E31 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A342242162500A82E31 /* Montserrat-Hairline.otf */; };
+		22C01A3F2242162600A82E31 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A352242162500A82E31 /* Montserrat-Regular.otf */; };
+		22C01A402242162600A82E31 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A362242162500A82E31 /* Montserrat-Black.otf */; };
+		22C01A412242162600A82E31 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A372242162500A82E31 /* Montserrat-UltraLight.otf */; };
+		22C01A422242162600A82E31 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A382242162600A82E31 /* Montserrat-ExtraBold.otf */; };
+		22C01A432242162600A82E31 /* sharefonts.net.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A392242162600A82E31 /* sharefonts.net.txt */; };
+		22C01A4522424AE700A82E31 /* Gotham Bold Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22C01A4422424AE700A82E31 /* Gotham Bold Regular.ttf */; };
 		22C50350222BFA3B00CDFE40 /* FinalBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5034F222BFA3B00CDFE40 /* FinalBookingViewController.swift */; };
+		22CD43C6222F9CE100BC25AD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD43C5222F9CE100BC25AD /* SignUpViewController.swift */; };
 		22D68669222667C2006B8508 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D68668222667C2006B8508 /* BookingViewController.swift */; };
 		22F0438322185B53002E8002 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438222185B53002E8002 /* FacebookCore.framework */; };
 		22F0438522185B53002E8002 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438422185B53002E8002 /* FacebookLogin.framework */; };
 		22F0438722185B53002E8002 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F0438622185B53002E8002 /* FacebookShare.framework */; };
+		22F34A6422882B1D000395B9 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F34A6322882B1D000395B9 /* ForgetPasswordViewController.swift */; };
 		22FC4E17221E927D001B84B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC4E16221E927D001B84B3 /* SearchViewController.swift */; };
+		22FECB88226884FB00828EC2 /* TravelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FECB87226884FB00828EC2 /* TravelObjects.swift */; };
 		E130F3B5088AD2DD8075BE5E /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EAACD42E38D4B7EC36BD49 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,20 +83,44 @@
 		225381F32213314F002C7EB4 /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225381F72213314F002C7EB4 /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
 		225381F92213314F002C7EB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228001D92289753900F1C918 /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
+		228E4F862250BF0D00D7D092 /* MontserratAlternates-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		228E4F872250D45900D7D092 /* Montserrat-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		2290EFD822579F36008191D9 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
+		2290EFDA2257A234008191D9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2290EFDC2257A609008191D9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		22A11BF92216B5E20017ADBF /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = credentials.plist; path = ../../../Downloads/credentials.plist; sourceTree = "<group>"; };
 		22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		22A11BFD22170C230017ADBF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		22A8BA6D221AD8B7001AF8A4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		22B22F2D2228FC24000AF62B /* BookingNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingNextViewController.swift; sourceTree = "<group>"; };
+		22BA7C402244CCA10077A40B /* Gotham Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Medium.otf"; sourceTree = "<group>"; };
+		22BA7C412244D7F50077A40B /* Montserrat-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.otf"; sourceTree = "<group>"; };
+		22BA7C422244D8380077A40B /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		22BB7596221BDC230073792A /* PackageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetailViewController.swift; sourceTree = "<group>"; };
+		22BD197E224A45190041266A /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		22C01A302242162400A82E31 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		22C01A312242162400A82E31 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		22C01A322242162400A82E31 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		22C01A332242162500A82E31 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		22C01A342242162500A82E31 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		22C01A352242162500A82E31 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		22C01A362242162500A82E31 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		22C01A372242162500A82E31 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		22C01A382242162600A82E31 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		22C01A392242162600A82E31 /* sharefonts.net.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sharefonts.net.txt; sourceTree = "<group>"; };
+		22C01A4422424AE700A82E31 /* Gotham Bold Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Bold Regular.ttf"; sourceTree = "<group>"; };
 		22C5034F222BFA3B00CDFE40 /* FinalBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalBookingViewController.swift; sourceTree = "<group>"; };
+		22CD43C5222F9CE100BC25AD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		22D68668222667C2006B8508 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		22F0438222185B53002E8002 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F0438422185B53002E8002 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F0438622185B53002E8002 /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F0438822186887002E8002 /* TravelApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelApp.entitlements; sourceTree = "<group>"; };
+		22F34A6322882B1D000395B9 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		22FC4E16221E927D001B84B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		22FECB87226884FB00828EC2 /* TravelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelObjects.swift; sourceTree = "<group>"; };
 		A9BC06D6359A74CD5B45A03B /* Pods-TravelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C8EAACD42E38D4B7EC36BD49 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +157,7 @@
 		225381C92213314E002C7EB4 = {
 			isa = PBXGroup;
 			children = (
+				22C01A2F224215EB00A82E31 /* fonts */,
 				225381D42213314E002C7EB4 /* TravelApp */,
 				225381EB2213314F002C7EB4 /* TravelAppTests */,
 				225381F62213314F002C7EB4 /* TravelAppUITests */,
@@ -140,7 +184,9 @@
 				22F0438822186887002E8002 /* TravelApp.entitlements */,
 				22A11BF92216B5E20017ADBF /* credentials.plist */,
 				22BF5F0722141A4D0019E800 /* CollectionViewCell.swift */,
+				228001D92289753900F1C918 /* FeaturedCollectionViewCell.swift */,
 				225381D52213314E002C7EB4 /* AppDelegate.swift */,
+				22CD43C5222F9CE100BC25AD /* SignUpViewController.swift */,
 				225381D72213314E002C7EB4 /* PackageViewController.swift */,
 				225381D92213314E002C7EB4 /* ProfileViewController.swift */,
 				22A11BFB22170BDA0017ADBF /* DashboardViewController.swift */,
@@ -151,9 +197,15 @@
 				22B22F2D2228FC24000AF62B /* BookingNextViewController.swift */,
 				22C5034F222BFA3B00CDFE40 /* FinalBookingViewController.swift */,
 				225381DB2213314E002C7EB4 /* Main.storyboard */,
+				22F34A6322882B1D000395B9 /* ForgetPasswordViewController.swift */,
+				22FECB87226884FB00828EC2 /* TravelObjects.swift */,
+				22BD197E224A45190041266A /* MyTripsViewController.swift */,
 				225381DE2213314F002C7EB4 /* Assets.xcassets */,
 				225381E02213314F002C7EB4 /* LaunchScreen.storyboard */,
 				225381E32213314F002C7EB4 /* Info.plist */,
+				2290EFD822579F36008191D9 /* APIUrl.swift */,
+				2290EFDA2257A234008191D9 /* DataManager.swift */,
+				2290EFDC2257A609008191D9 /* ActivityIndicator.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -174,6 +226,29 @@
 				225381F92213314F002C7EB4 /* Info.plist */,
 			);
 			path = TravelAppUITests;
+			sourceTree = "<group>";
+		};
+		22C01A2F224215EB00A82E31 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				228E4F872250D45900D7D092 /* Montserrat-SemiBoldItalic.otf */,
+				228E4F862250BF0D00D7D092 /* MontserratAlternates-SemiBoldItalic.otf */,
+				22BA7C422244D8380077A40B /* Montserrat-Medium.otf */,
+				22BA7C412244D7F50077A40B /* Montserrat-Italic.otf */,
+				22C01A4422424AE700A82E31 /* Gotham Bold Regular.ttf */,
+				22C01A362242162500A82E31 /* Montserrat-Black.otf */,
+				22C01A302242162400A82E31 /* Montserrat-Bold.otf */,
+				22C01A382242162600A82E31 /* Montserrat-ExtraBold.otf */,
+				22C01A342242162500A82E31 /* Montserrat-Hairline.otf */,
+				22C01A332242162500A82E31 /* Montserrat-Light.otf */,
+				22C01A352242162500A82E31 /* Montserrat-Regular.otf */,
+				22BA7C402244CCA10077A40B /* Gotham Medium.otf */,
+				22C01A312242162400A82E31 /* Montserrat-SemiBold.otf */,
+				22C01A322242162400A82E31 /* Montserrat-Thin.ttf */,
+				22C01A372242162500A82E31 /* Montserrat-UltraLight.otf */,
+				22C01A392242162600A82E31 /* sharefonts.net.txt */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		E936DA243DBB1F6D50B4F961 /* Frameworks */ = {
@@ -267,6 +342,7 @@
 				TargetAttributes = {
 					225381D12213314E002C7EB4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -275,10 +351,12 @@
 					};
 					225381E72213314F002C7EB4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 225381D12213314E002C7EB4;
 					};
 					225381F22213314F002C7EB4 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 225381D12213314E002C7EB4;
 					};
 				};
@@ -308,10 +386,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C01A432242162600A82E31 /* sharefonts.net.txt in Resources */,
+				22C01A3A2242162600A82E31 /* Montserrat-Bold.otf in Resources */,
+				22C01A402242162600A82E31 /* Montserrat-Black.otf in Resources */,
 				225381E22213314F002C7EB4 /* LaunchScreen.storyboard in Resources */,
 				225381DF2213314F002C7EB4 /* Assets.xcassets in Resources */,
+				22C01A412242162600A82E31 /* Montserrat-UltraLight.otf in Resources */,
+				22C01A3F2242162600A82E31 /* Montserrat-Regular.otf in Resources */,
+				22C01A3B2242162600A82E31 /* Montserrat-SemiBold.otf in Resources */,
 				22A11BFA2216B5E30017ADBF /* credentials.plist in Resources */,
 				225381DD2213314E002C7EB4 /* Main.storyboard in Resources */,
+				22C01A422242162600A82E31 /* Montserrat-ExtraBold.otf in Resources */,
+				22C01A4522424AE700A82E31 /* Gotham Bold Regular.ttf in Resources */,
+				22C01A3E2242162600A82E31 /* Montserrat-Hairline.otf in Resources */,
+				22C01A3C2242162600A82E31 /* Montserrat-Thin.ttf in Resources */,
+				22C01A3D2242162600A82E31 /* Montserrat-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +428,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TravelApp/Pods-TravelApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -348,9 +438,13 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -360,6 +454,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -411,16 +508,24 @@
 			files = (
 				225381DA2213314E002C7EB4 /* ProfileViewController.swift in Sources */,
 				225381D62213314E002C7EB4 /* AppDelegate.swift in Sources */,
+				228001DA2289753900F1C918 /* FeaturedCollectionViewCell.swift in Sources */,
+				2290EFDD2257A609008191D9 /* ActivityIndicator.swift in Sources */,
+				2290EFD922579F36008191D9 /* APIUrl.swift in Sources */,
+				22F34A6422882B1D000395B9 /* ForgetPasswordViewController.swift in Sources */,
 				22C50350222BFA3B00CDFE40 /* FinalBookingViewController.swift in Sources */,
 				22A11BFC22170BDA0017ADBF /* DashboardViewController.swift in Sources */,
 				22FC4E17221E927D001B84B3 /* SearchViewController.swift in Sources */,
+				2290EFDB2257A234008191D9 /* DataManager.swift in Sources */,
 				22A11BFE22170C230017ADBF /* MainViewController.swift in Sources */,
 				22BF5F0822141A4D0019E800 /* CollectionViewCell.swift in Sources */,
 				22A8BA6E221AD8B7001AF8A4 /* TableViewCell.swift in Sources */,
+				22CD43C6222F9CE100BC25AD /* SignUpViewController.swift in Sources */,
 				22B22F2E2228FC24000AF62B /* BookingNextViewController.swift in Sources */,
 				22BB7597221BDC230073792A /* PackageDetailViewController.swift in Sources */,
 				22D68669222667C2006B8508 /* BookingViewController.swift in Sources */,
+				22BD197F224A45190041266A /* MyTripsViewController.swift in Sources */,
 				225381D82213314E002C7EB4 /* PackageViewController.swift in Sources */,
+				22FECB88226884FB00828EC2 /* TravelObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +637,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -585,6 +691,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -604,7 +711,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amit.travel.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -624,7 +731,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amit.travel.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -643,7 +750,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amit.travel.TravelAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelApp.app/TravelApp";
 			};
@@ -663,7 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amit.travel.TravelAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelApp.app/TravelApp";
 			};
@@ -682,7 +789,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amit.travel.TravelAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TravelApp;
 			};
@@ -701,7 +808,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amit.travel.TravelAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TravelApp;
 			};

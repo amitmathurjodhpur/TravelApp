@@ -71,7 +71,7 @@ public enum SDKSettings {
       return FBSDKSettings.clientToken()
     }
     set {
-      FBSDKSettings.setClientToken(clientToken)
+      FBSDKSettings.setClientToken(newValue)
     }
   }
 
@@ -146,12 +146,7 @@ public enum SDKSettings {
         }
         return nil
       }
-
-      #if swift(>=4.1)
-      let behaviors: [SDKLoggingBehavior] = FBSDKSettings.loggingBehavior().compactMap(createBehavior)
-      #else
-      let behaviors: [SDKLoggingBehavior] = FBSDKSettings.loggingBehavior().flatMap(createBehavior)
-      #endif
+        let behaviors: [SDKLoggingBehavior] = FBSDKSettings.loggingBehaviors.compactMap(createBehavior)
 
       return Set(behaviors)
     }

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+// Copyright (c) 2016-present, Facebook, Inc. All rights reserved.
 //
 // You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 // copy, modify, and distribute this software in source code or binary form for use
@@ -16,38 +16,38 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "FBSDKCrypto.h"
+import Foundation
 
-#import "FBSDKBase64.h"
-#import "FBSDKDynamicFrameworkLoader.h"
-
-static inline void FBSDKCryptoBlankData(NSData *data)
-{
-  if (!data) {
-    return;
+/**
+ AccessToken Extension
+ */
+public extension AccessToken {
+  /**
+   Returns the known granted permissions.
+   */
+  var permissions: Set<Permission> {
+    return Set(__permissions.map { Permission(stringLiteral: $0) })
   }
-  bzero((void *) [data bytes], [data length]);
-}
 
-@implementation FBSDKCrypto
-
-+ (NSData *)randomBytes:(NSUInteger)numOfBytes
-{
-  uint8_t *buffer = malloc(numOfBytes);
-  int result = fbsdkdfl_SecRandomCopyBytes([FBSDKDynamicFrameworkLoader loadkSecRandomDefault], numOfBytes, buffer);
-  if (result != 0) {
-    free(buffer);
-    return nil;
+  /**
+   Returns the known declined permissions.
+   */
+  var declinedPermissions: Set<Permission> {
+    return Set(__declinedPermissions.map { Permission(stringLiteral: $0) })
   }
-  return [NSData dataWithBytesNoCopy:buffer length:numOfBytes];
-}
 
-+ (NSString *)randomString:(NSUInteger)numOfBytes
-{
-  NSData *randomStringData = [FBSDKCrypto randomBytes:numOfBytes];
-  NSString *randomString = [FBSDKBase64 encodeData:randomStringData];
-  FBSDKCryptoBlankData(randomStringData);
-  return randomString;
-}
+  /**
+   Returns the known expired permissions.
+   */
+  var expiredPermissions: Set<Permission> {
+    return Set(__expiredPermissions.map { Permission(stringLiteral: $0) })
+  }
 
-@end
+  /**
+   Convenience getter to determine if a permission has been granted
+   - parameter permission: The permission to check
+   */
+  func hasGranted(_ permission: Permission) -> Bool {
+    return hasGranted(permission: permission.name)
+  }
+}

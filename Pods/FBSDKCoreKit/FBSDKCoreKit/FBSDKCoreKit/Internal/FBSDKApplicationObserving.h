@@ -16,38 +16,23 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "FBSDKCrypto.h"
+#import <Foundation/Foundation.h>
 
-#import "FBSDKBase64.h"
-#import "FBSDKDynamicFrameworkLoader.h"
+NS_ASSUME_NONNULL_BEGIN
 
-static inline void FBSDKCryptoBlankData(NSData *data)
-{
-  if (!data) {
-    return;
-  }
-  bzero((void *) [data bytes], [data length]);
-}
+@protocol FBSDKApplicationObserving <NSObject>
 
-@implementation FBSDKCrypto
+@optional
+- (void)applicationDidBecomeActive:(nullable UIApplication *)application;
+- (void)applicationDidEnterBackground:(nullable UIApplication *)application;
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(nullable NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions;
 
-+ (NSData *)randomBytes:(NSUInteger)numOfBytes
-{
-  uint8_t *buffer = malloc(numOfBytes);
-  int result = fbsdkdfl_SecRandomCopyBytes([FBSDKDynamicFrameworkLoader loadkSecRandomDefault], numOfBytes, buffer);
-  if (result != 0) {
-    free(buffer);
-    return nil;
-  }
-  return [NSData dataWithBytesNoCopy:buffer length:numOfBytes];
-}
-
-+ (NSString *)randomString:(NSUInteger)numOfBytes
-{
-  NSData *randomStringData = [FBSDKCrypto randomBytes:numOfBytes];
-  NSString *randomString = [FBSDKBase64 encodeData:randomStringData];
-  FBSDKCryptoBlankData(randomStringData);
-  return randomString;
-}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(nullable NSString *)sourceApplication
+         annotation:(nullable id)annotation;
 
 @end
+
+NS_ASSUME_NONNULL_END

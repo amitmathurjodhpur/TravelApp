@@ -1,4 +1,4 @@
-// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+// Copyright (c) 2016-present, Facebook, Inc. All rights reserved.
 //
 // You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 // copy, modify, and distribute this software in source code or binary form for use
@@ -16,38 +16,30 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "FBSDKCrypto.h"
+import Foundation
 
-#import "FBSDKBase64.h"
-#import "FBSDKDynamicFrameworkLoader.h"
+//--------------------------------------
+// MARK: - SDKSettings
+//--------------------------------------
 
-static inline void FBSDKCryptoBlankData(NSData *data)
-{
-  if (!data) {
-    return;
+/**
+ Provides access to settings and configuration used by the entire SDK.
+ */
+public extension Settings {
+  //--------------------------------------
+  // MARK: - SDKSettings + Logging Behavior
+  //--------------------------------------
+
+  /**
+   Current logging behaviors of Facebook SDK.
+   The default enabled behavior is `.DeveloperErrors` only.
+   */
+  static var loggingBehaviors: Set<LoggingBehavior> {
+    get {
+      return Set(Settings.__loggingBehaviors.map { LoggingBehavior(rawValue: $0) })
+    }
+    set {
+      Settings.__loggingBehaviors = Set(newValue.map { $0.rawValue })
+    }
   }
-  bzero((void *) [data bytes], [data length]);
 }
-
-@implementation FBSDKCrypto
-
-+ (NSData *)randomBytes:(NSUInteger)numOfBytes
-{
-  uint8_t *buffer = malloc(numOfBytes);
-  int result = fbsdkdfl_SecRandomCopyBytes([FBSDKDynamicFrameworkLoader loadkSecRandomDefault], numOfBytes, buffer);
-  if (result != 0) {
-    free(buffer);
-    return nil;
-  }
-  return [NSData dataWithBytesNoCopy:buffer length:numOfBytes];
-}
-
-+ (NSString *)randomString:(NSUInteger)numOfBytes
-{
-  NSData *randomStringData = [FBSDKCrypto randomBytes:numOfBytes];
-  NSString *randomString = [FBSDKBase64 encodeData:randomStringData];
-  FBSDKCryptoBlankData(randomStringData);
-  return randomString;
-}
-
-@end

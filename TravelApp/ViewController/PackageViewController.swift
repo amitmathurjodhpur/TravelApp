@@ -38,22 +38,18 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet weak var contentView: UIView!
     //MARK:- view did load
     override func viewDidLoad() {
-       //  ActivityIndicator.shared.show(self.view)
         super.viewDidLoad()
         scrollView.isScrollEnabled=true
-       loadData()
+        loadData()
         loadCities()
-       
-        
     }
+    
     @IBAction func searchTapped(_ sender: Any) {
         if let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController {
             self.definesPresentationContext = true
             searchVC.modalPresentationStyle = .overCurrentContext
             self.present(searchVC, animated: true, completion: nil)
-
         }
-        
     }
     
     @IBAction func destinationNameOpnTapped(_ sender: Any) {
@@ -90,9 +86,9 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
       
     }
     func loadCities(){
-        let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
-        let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
-        DataManager.getAPIWithHeader(urlString: API.cities, header: headerDict, success: {
+        let headerObj = GlobalData.sharedInstance.getHeaderDict()
+        ActivityIndicator.shared.show(self.view)
+        DataManager.getAPIWithHeader(urlString: API.cities, header: headerObj, success: {
             success in
             if let response = success["data"] as? Dictionary<String, Any>, response.count > 0 {
                 ActivityIndicator.shared.hide()
@@ -109,71 +105,44 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
             ActivityIndicator.shared.hide()
             print(failure)
         })
-        
-    }
+   }
+    
     func loadData() {
-        let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
-        let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
         ActivityIndicator.shared.show(self.view)
-        
-        DataManager.getAPIWithHeader(urlString: API.dashBoard, header: headerDict, success: {
-            success in
-
+        let headerObj = GlobalData.sharedInstance.getHeaderDict()
+        DataManager.getAPIWithHeader(urlString: API.dashBoard, header: headerObj, success: { success in
             if let response = success["data"] as? Dictionary<String, Any>, response.count > 0 {
                 print(response)
-                if let packagesArr = response["packages"] {
-                    for packageObj in (packagesArr as? [[String : Any]])! {
-                        let package = Packages.init(packageId: packageObj["package_id"] as? String ?? "", packageName: packageObj["package_name"] as? String ?? "", packageCode: packageObj["package_code"] as? String ?? "", packageDescription: packageObj["package_description"] as? String ?? "", duration: packageObj["duration"] as? String ?? "", country: packageObj["package_country"] as? String ?? "",       state: packageObj["package_state"] as? String ?? "", city: packageObj["package_city"] as? String ?? "", location: packageObj["package_location"] as? String ?? "", rating: packageObj["rating"] as? String ?? "", status: packageObj["status"] as? String ?? "", price: packageObj["price"] as? String ?? "", image: packageObj["image"] as? String ?? "", favourite: packageObj["favourite"] as? String ?? "")
-                        self.packageArray.append(package)
-
-                    }
-                }
-                if let recomndedPackArr = response["recommended_packages"] {
-                    for recomnPack in (recomndedPackArr as? [[String : Any]])! {
-                        let recomndedpackage = Packages.init(packageId: recomnPack["package_id"] as? String ?? "", packageName: recomnPack["package_name"] as? String ?? "", packageCode: recomnPack["package_code"] as? String ?? "", packageDescription: recomnPack["package_description"] as? String ?? "", duration: recomnPack["duration"] as? String ?? "", country: recomnPack["package_country"] as? String ?? "",       state: recomnPack["package_state"] as? String ?? "", city: recomnPack["package_city"] as? String ?? "", location: recomnPack["package_location"] as? String ?? "", rating: recomnPack["rating"] as? String ?? "", status: recomnPack["status"] as? String ?? "", price: recomnPack["price"] as? String ?? "", image: recomnPack["image"] as? String ?? "", favourite: recomnPack["favourite"] as? String ?? "")
-                        self.recomndedPackageArray.append(recomndedpackage)
-                    }
-                }
-                if let featuredPackArr = response["featured_packages"] {
-                    for featuredPack in (featuredPackArr as? [[String : Any]])! {
-                        let featuredpackage = Packages.init(packageId: featuredPack["package_id"] as? String ?? "", packageName: featuredPack["package_name"] as? String ?? "", packageCode: featuredPack["package_code"] as? String ?? "", packageDescription: featuredPack["package_description"] as? String ?? "", duration: featuredPack["duration"] as? String ?? "", country: featuredPack["package_country"] as? String ?? "", state: featuredPack["package_state"] as? String ?? "", city: featuredPack["package_city"] as? String ?? "", location: featuredPack["package_location"] as? String ?? "", rating: featuredPack["rating"] as? String ?? "", status: featuredPack["status"] as? String ?? "", price: featuredPack["price"] as? String ?? "", image: featuredPack["image"] as? String ?? "", favourite: featuredPack["favourite"] as? String ?? "")
-                        self.featuredPackageArray.append(featuredpackage)                    }
-                }
-                self.packageCollectionView.reloadData()
-                self.destinationCollectionView.reloadData()
-                self.tableView.reloadData()
+                self.configurePackage(response: response as NSDictionary)
                 ActivityIndicator.shared.hide()
-
+            } else {
+                ActivityIndicator.shared.hide()
             }
         }, failure: {
             failure in
             ActivityIndicator.shared.hide()
             print(failure)
         })
-       
     }
-    
     
     @IBAction func favriouteTapped(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
         }
-        let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
-        let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
+         let headerObj = GlobalData.sharedInstance.getHeaderDict()
         ActivityIndicator.shared.show(self.view)
         let packId = packageArray[button.tag].packageId
         let dic = ["package_id":packId]
-        if (button.image(for: .normal)?.isEqual(#imageLiteral(resourceName: "fav")))! {
-            DataManager.postAPIWithHeaderAndParameters(urlString: API.unfavrt_packages, jsonString: dic as [String : AnyObject], header: headerDict, success:{
+        if let btnImage = button.image(for: .normal), btnImage.isEqual(#imageLiteral(resourceName: "fav")) {
+            DataManager.postAPIWithHeaderAndParameters(urlString: API.unfavrt_packages, jsonString: dic as [String : AnyObject], header: headerObj, success:{
                 success in
                 if let response = success["data"] as? Dictionary<String, AnyObject> , response.count > 0 {
                     print(response)
                     ActivityIndicator.shared.hide()
-
                     if let msg = response["msg"] as? String {
                         self.showAlert("", msg)
                     }
-                   // self.packageCollectionView.reloadData()
+                    // self.packageCollectionView.reloadData()
                     button.setImage(#imageLiteral(resourceName: "fav1"), for: .normal)
                 }
             }, failure: {
@@ -181,19 +150,18 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
                 ActivityIndicator.shared.hide()
                 print(failure)
             })
-        }
-        else {
-            DataManager.postAPIWithHeaderAndParameters(urlString: API.favrt_package, jsonString: dic as [String : AnyObject], header: headerDict, success:{
+        } else {
+            DataManager.postAPIWithHeaderAndParameters(urlString: API.favrt_package, jsonString: dic as [String : AnyObject], header: headerObj, success:{
                 success in
                 if let response = success["data"] as? Dictionary<String, AnyObject> , response.count > 0 {
                     print(response)
                     ActivityIndicator.shared.hide()
-
+                    
                     if let msg = response["msg"] as? String {
                         self.showAlert("", msg)
                     }
                     button.setImage(#imageLiteral(resourceName: "fav"), for: .normal)
-                   // self.packageCollectionView.reloadData()
+                    // self.packageCollectionView.reloadData()
                 }
             }, failure: {
                 failure in
@@ -395,6 +363,32 @@ class PackageViewController: UIViewController,UICollectionViewDelegate,UICollect
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    
-}
 
+    func configurePackage(response: NSDictionary) {
+        if let packagesArr = response["packages"] {
+            for packageObj in (packagesArr as? [[String : Any]])! {
+                let package = Packages.init(packageId: packageObj["package_id"] as? String ?? "", packageName: packageObj["package_name"] as? String ?? "", packageCode: packageObj["package_code"] as? String ?? "", packageDescription: packageObj["package_description"] as? String ?? "", duration: packageObj["duration"] as? String ?? "", country: packageObj["package_country"] as? String ?? "",       state: packageObj["package_state"] as? String ?? "", city: packageObj["package_city"] as? String ?? "", location: packageObj["package_location"] as? String ?? "", rating: packageObj["rating"] as? String ?? "", status: packageObj["status"] as? String ?? "", price: packageObj["price"] as? String ?? "", image: packageObj["image"] as? String ?? "", favourite: packageObj["favourite"] as? String ?? "")
+                self.packageArray.append(package)
+                
+            }
+        }
+        if let recomndedPackArr = response["recommended_packages"] {
+            for recomnPack in (recomndedPackArr as? [[String : Any]])! {
+                let recomndedpackage = Packages.init(packageId: recomnPack["package_id"] as? String ?? "", packageName: recomnPack["package_name"] as? String ?? "", packageCode: recomnPack["package_code"] as? String ?? "", packageDescription: recomnPack["package_description"] as? String ?? "", duration: recomnPack["duration"] as? String ?? "", country: recomnPack["package_country"] as? String ?? "",       state: recomnPack["package_state"] as? String ?? "", city: recomnPack["package_city"] as? String ?? "", location: recomnPack["package_location"] as? String ?? "", rating: recomnPack["rating"] as? String ?? "", status: recomnPack["status"] as? String ?? "", price: recomnPack["price"] as? String ?? "", image: recomnPack["image"] as? String ?? "", favourite: recomnPack["favourite"] as? String ?? "")
+                self.recomndedPackageArray.append(recomndedpackage)
+            }
+        }
+        if let featuredPackArr = response["featured_packages"] {
+            for featuredPack in (featuredPackArr as? [[String : Any]])! {
+                let featuredpackage = Packages.init(packageId: featuredPack["package_id"] as? String ?? "", packageName: featuredPack["package_name"] as? String ?? "", packageCode: featuredPack["package_code"] as? String ?? "", packageDescription: featuredPack["package_description"] as? String ?? "", duration: featuredPack["duration"] as? String ?? "", country: featuredPack["package_country"] as? String ?? "", state: featuredPack["package_state"] as? String ?? "", city: featuredPack["package_city"] as? String ?? "", location: featuredPack["package_location"] as? String ?? "", rating: featuredPack["rating"] as? String ?? "", status: featuredPack["status"] as? String ?? "", price: featuredPack["price"] as? String ?? "", image: featuredPack["image"] as? String ?? "", favourite: featuredPack["favourite"] as? String ?? "")
+                self.featuredPackageArray.append(featuredpackage)
+            }
+        }
+        DispatchQueue.main.async {
+            self.packageCollectionView.reloadData()
+            self.destinationCollectionView.reloadData()
+            self.tableView.reloadData()
+            ActivityIndicator.shared.hide()
+        }
+    }
+}

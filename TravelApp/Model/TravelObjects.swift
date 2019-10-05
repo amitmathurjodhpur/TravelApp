@@ -139,8 +139,18 @@ class BookingEntries {
     var hotelType: String = ""
     var name: String = ""
     var email:String = ""
-    var passportNumber = ""
-    var dateOfBirth = ""
+    var passportNumber: String = ""
+    var dateOfBirth: String = ""
+    var travellerFirstName: String = ""
+    var travellerLastName: String = ""
+    var travellerDateOfBirth: String = ""
+    var travellerEmail: String = ""
+    var travellerPassportNationality: String = ""
+    var travellerPassportExpiryDay: String = ""
+    var travellerPassportExpiryMonth: String = ""
+    var travellerPassportExpiryYear: String = ""
+    var travellerPassportNumber: String = ""
+    var travellerIssuingCountry: String = ""
     private init() {}
     func saveData() {
         

@@ -76,7 +76,7 @@ you want to visit?</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGA-fJ-5l5">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="1500"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JOX-dj-vYy">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JOX-dj-vYy">
                                                 <rect key="frame" x="0.0" y="4" width="305" height="345"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -932,7 +932,7 @@ you want to visit?</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-1T-mkm">
-                                        <rect key="frame" x="56" y="74" width="199" height="30"/>
+                                        <rect key="frame" x="56" y="95" width="199" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hm9-1p-sbP"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="vD8-JO-Ksx"/>
@@ -942,14 +942,14 @@ you want to visit?</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8g-PI-lb1">
-                                        <rect key="frame" x="54" y="62" width="152" height="1.5"/>
+                                        <rect key="frame" x="54" y="62" width="152" height="22.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="location-ico" translatesAutoresizingMaskIntoConstraints="NO" id="Nuc-wt-gSb">
-                                        <rect key="frame" x="15" y="25" width="12" height="21"/>
+                                        <rect key="frame" x="15" y="25" width="24" height="42"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKZ-dz-RMj">
-                                        <rect key="frame" x="15" y="78" width="21" height="21"/>
+                                        <rect key="frame" x="15" y="99" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="21" id="YQM-mQ-ZiO"/>
                                             <constraint firstAttribute="height" constant="21" id="n33-Zm-8nw"/>
@@ -960,7 +960,7 @@ you want to visit?</string>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-lQ-u7g">
-                                        <rect key="frame" x="56" y="127.5" width="199" height="30"/>
+                                        <rect key="frame" x="56" y="148.5" width="199" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="199" id="cNY-PH-6ec"/>
                                             <constraint firstAttribute="height" constant="30" id="r4m-2B-ET8"/>
@@ -970,14 +970,14 @@ you want to visit?</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L6Z-pH-jpb">
-                                        <rect key="frame" x="54" y="115" width="152" height="2"/>
+                                        <rect key="frame" x="54" y="136" width="152" height="2"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="3DN-Fa-yPt"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlV-tP-BRN">
-                                        <rect key="frame" x="15" y="131" width="21" height="21"/>
+                                        <rect key="frame" x="15" y="152" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Gd4-Iu-hwt"/>
                                             <constraint firstAttribute="width" constant="21" id="Mxd-7j-EcV"/>
@@ -2568,7 +2568,7 @@ Then, drive back your hotel and overnight in Hanoi.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9B-EG-Mb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3157.5999999999999" y="330.58470764617692"/>
+            <point key="canvasLocation" x="3113" y="94"/>
         </scene>
         <!--Booking Next View Controller-->
         <scene sceneID="dzH-EF-w0s">
@@ -4600,7 +4600,7 @@ Profile</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-2t-qya">
-                                        <rect key="frame" x="115" y="319" width="145" height="30"/>
+                                        <rect key="frame" x="115" y="369" width="145" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="iZv-iq-rC3"/>
                                             <constraint firstAttribute="width" constant="145" id="yyb-Oi-yuE"/>
@@ -5420,7 +5420,7 @@ Hotel Ha Long International</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIETNAM TRAVELS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYl-PE-Z7L">
-                                <rect key="frame" x="44" y="180" width="247" height="30"/>
+                                <rect key="frame" x="44" y="180" width="295" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="K1W-CR-n86"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="261" id="fzS-g6-CLT"/>
@@ -5430,7 +5430,7 @@ Hotel Ha Long International</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aI4-mF-fZ1" customClass="UnderLineTextField" customModule="UnderLineTextField">
-                                <rect key="frame" x="57" y="364" width="275" height="45"/>
+                                <rect key="frame" x="57" y="364" width="323" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="icP-R6-Lba"/>
                                     <constraint firstAttribute="height" constant="45" id="kKd-FG-GQd"/>
@@ -5445,7 +5445,7 @@ Hotel Ha Long International</string>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foq-Q8-8qM">
-                                <rect key="frame" x="135" y="447" width="66" height="50"/>
+                                <rect key="frame" x="135" y="447" width="114" height="50"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.74901960779999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WeE-P5-gpK"/>
@@ -5460,7 +5460,7 @@ Hotel Ha Long International</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ4-5m-zQa">
-                                <rect key="frame" x="11" y="35" width="18" height="18"/>
+                                <rect key="frame" x="11" y="35" width="36" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="2Xt-du-q6u"/>
                                     <constraint firstAttribute="width" constant="27" id="9cd-fG-wx2"/>

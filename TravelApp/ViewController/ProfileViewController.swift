@@ -120,18 +120,16 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
 //            processBar.translatesAutoresizingMaskIntoConstraints=true
 //            processBar.frame=CGRect(x: 57, y: 0, width: 72, height: 6)
 //        }
-        loadCountryDetails()
+     //   loadCountryDetails()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.loadProfile()
         })
-        loadProfile()
-        loadAboutUs()
+       // loadProfile()
+       // loadAboutUs()
         super.viewDidLoad()
     }
-    @objc func doneClicked()
-    {
+    @objc func doneClicked() {
         self.view.endEditing(true)
-        
     }
     override func viewDidLayoutSubviews() {
         var topPoint = CGFloat()
@@ -219,9 +217,8 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func loadProfile()
     {
         ActivityIndicator.shared.show(self.view)
-
         let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
-        let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
+        let headerDict: [String:AnyObject] = ["Auth_token":header as AnyObject]
         DataManager.getAPIWithHeader(urlString: API.profile, header: headerDict, success: {
             success in
             if let response = success["data"] as? Dictionary<String, Any>, response.count > 0 {

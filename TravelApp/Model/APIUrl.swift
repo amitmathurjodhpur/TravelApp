@@ -8,7 +8,7 @@
 
 import UIKit
 //base URL for app
-public let baseURL              = "https://pixelsncode.in/webservices/index.php/"
+public let baseURL              = "https://misterminh.com/webservices/index.php/"
 public let imageBaseURL         =   "http://pixelsncode.in/vietnam_travels/extras/custom/Vc8Z7XLsy3773882296/uploads/packages/"
 
 public struct API {
@@ -21,14 +21,16 @@ public struct API {
     public static let updateProfile           =           baseURL+"user/profile"
     public static let logOut                  =           baseURL+"auth/ajax_logout"
     public static let changePassword          =           baseURL+"auth/change_password"
-    public static let forgotPassword          =           baseURL+"auth/forgot_password"
+    public static let forgotPassword          =           baseURL+"auth/forgot_passwor"
     public static let termsAndCondition       =           baseURL+"general/terms_and_condition"
     public static let aboutUs                 =           baseURL+"general/about_us"
     public static let register                =           baseURL+"auth/register_on_light_box"
     public static let dashBoard               =           baseURL+"tours/dashboard"
     public static let country                 =           baseURL+"user/get_phone_code_list"
     public static let favrt_package           =           baseURL+"tours/favrt_package"
-    public static let unfavrt_packages        =           baseURL+"tours/unfavrt_packages"
+    public static let unfavrt_packages        =           baseURL+"tours/unfavrt_package"
+    public static let booking                 =           baseURL+"tours/pre_booking"
+    public static let cancelBooking           =           baseURL+"tours/user_package_cancel"
 }
 public let KOk                                =        "Ok"
 
@@ -36,8 +38,9 @@ public let KOk                                =        "Ok"
 public let KAlertTitle                        =      "TravelApp"
 public let kUnKnownError                      =      "Server connection is poor"
 public let KInternetConnection                =      "The Internet connection appears to be offline."
+public let KErrorResponse                     =      "Error in response."
 
 public struct AppKey {
-    public static let AuthorizationKey = "auth_token"
+    public static let AuthorizationKey = "Auth_token"
 
 }

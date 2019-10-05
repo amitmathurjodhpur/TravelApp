@@ -20,19 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "838879136051-qhqoeao2t4m4drbqd4t748cdlf8srup6.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         isTabBarBtnPress=false
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        let appId: String = FBSDKSettings.appID()
-        if url.scheme != nil && url.scheme!.hasPrefix("fb\(appId)") && url.host ==  "authorize" {
-            return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: appId, annotation: nil)
+        if let appId = Settings.appID {
+            if url.scheme != nil && url.scheme!.hasPrefix("fb\(appId)") && url.host ==  "authorize" {
+                return ApplicationDelegate.shared.application(app, open: url, sourceApplication: appId, annotation: nil)
+            }
         }
-
-        return GIDSignIn.sharedInstance().handle(url as URL?,sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        
+        
+        return (GIDSignIn.sharedInstance()?.handle(url) ?? false) //handle(url as URL?,sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
     
    

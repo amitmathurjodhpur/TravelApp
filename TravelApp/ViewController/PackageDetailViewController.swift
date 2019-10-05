@@ -88,7 +88,7 @@ class PackageDetailViewController: UIViewController,UITabBarDelegate,UITableView
         let api=API.packageDetail+id
         let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
       //  let header = "$1$UjDcPu4W$9EidH7/9vMgCWOEc4pNFQ0"
-        let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
+        let headerDict: [String:AnyObject] = ["Auth_token":header as AnyObject]
         DataManager.getAPIWithHeader(urlString: api, header: headerDict, success: {
             success in
             ActivityIndicator.shared.show(self.view)
@@ -160,7 +160,7 @@ class PackageDetailViewController: UIViewController,UITabBarDelegate,UITableView
             bookingVC.packageImagePath = packageImagePath
             bookingVC.rating = packageArray[0].rating
             bookingVC.duration = packageArray[0].duration
-
+            BookingEntries.shared.packageID = String(self.packId)
             self.present(bookingVC, animated: true, completion: nil)
             
         }

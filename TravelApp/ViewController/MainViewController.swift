@@ -13,7 +13,7 @@ import FacebookLogin
 import Alamofire
 
 
-class MainViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate {
+class MainViewController: UIViewController, GIDSignInDelegate {
     
     @IBOutlet weak var fbBtn: UIButton!
     @IBOutlet weak var signUpBtn: UIButton!
@@ -28,7 +28,7 @@ class MainViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegat
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window?.rootViewController = UINavigationController.init(rootViewController: vc!)
         } else {
-            GIDSignIn.sharedInstance().uiDelegate = self as GIDSignInUIDelegate?
+            //GIDSignIn.sharedInstance()?.delegate = self
             GIDSignIn.sharedInstance().delegate=self
             let toolBar=UIToolbar()
             toolBar.sizeToFit()
@@ -74,14 +74,14 @@ class MainViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegat
     
     @IBAction func facebookLogin(_ sender: Any) {
         let loginManager = LoginManager()
-       loginManager.logIn(readPermissions: [ReadPermission.userAboutMe, ReadPermission.email,ReadPermission.publicProfile ], viewController: self) { (loginResult) in
+        loginManager.logIn(permissions: [Permission.userAboutMe, Permission.email,Permission.publicProfile ], viewController: self) { (loginResult) in
             print(loginResult)
             switch loginResult {
             case .failed(let error):
                 print(error)
             case .cancelled:
                 print("User cancelled login.")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+            case .success( _, _, let accessToken):
                 print("user token \(accessToken)")
             }
         }
@@ -106,8 +106,6 @@ class MainViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegat
 
             DataManager.postAPIWithParameters(urlString: API.logIn , jsonString: dic as [String : AnyObject], success: {
                 success in
-
-
                 if let response = success["status"] as? Int, response == 200, let data = success["data"] as? Dictionary<String, AnyObject> {
                     print(response)
                     let Token = data["auth_token"] as? String

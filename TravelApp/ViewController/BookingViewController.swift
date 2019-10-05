@@ -21,6 +21,7 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     var tapGesture = UITapGestureRecognizer()
     let fullStarImage = UIImage(named: "Star gold.png")
     let emptyStarImage = UIImage(named: "Star.png")
+    var hotelOption = ""
     @IBOutlet weak var durationTextBox: UITextField!
     @IBOutlet weak var adultTextField: UITextField!
     @IBOutlet weak var hotelOptionLabel: UILabel!
@@ -93,6 +94,7 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
                 standardButton.layer.borderWidth=0
                 superiorButton.backgroundColor=currentColor
                 standardButton.backgroundColor=currentColor
+                hotelOption = "deluxe"
             case superiorButton:
                 hotelOptionLabel.text="4 Star Hotel Selected"
                 superiorButton.backgroundColor=UIColor.white
@@ -101,6 +103,7 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
                 standardButton.layer.borderWidth=0
                 deluxeButton.backgroundColor=currentColor
                 standardButton.backgroundColor=currentColor
+                hotelOption = "superior"
             case standardButton:
                 hotelOptionLabel.text="3 Star Hotel Selected"
                 standardButton.backgroundColor=UIColor.white
@@ -109,6 +112,7 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
                 deluxeButton.layer.borderWidth=0
                 superiorButton.backgroundColor=currentColor
                 deluxeButton.backgroundColor=currentColor
+                hotelOption = "standard"
             default:
                 hotelOptionLabel.text="Select a Hotel"
             }
@@ -186,12 +190,14 @@ class BookingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewD
         dateFormatter.dateFormat="dd-MM-yyyy"
         dateTextField.text=dateFormatter.string(from: (datePickerView as AnyObject).date)
     }
-    @objc func doneClicked()
-    {
+    @objc func doneClicked() {
         self.view.endEditing(true)
-       
     }
     @objc func nextViewTapped(_ sender: UITapGestureRecognizer) {
+        BookingEntries.shared.hotelType = hotelOption
+        BookingEntries.shared.travelDate = dateTextField.text ?? ""
+        BookingEntries.shared.noOfAdults = adultTextField.text ?? ""
+        BookingEntries.shared.noOfChildren = childrenTextField.text ?? ""
         if let BookingNextVC = self.storyboard?.instantiateViewController(withIdentifier: "BookingNextViewController") as? BookingNextViewController {
             BookingNextVC.packageImagePath = packageImagePath
             self.present(BookingNextVC, animated: true, completion: nil)

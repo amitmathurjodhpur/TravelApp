@@ -8,7 +8,7 @@ pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'ImageSlideshow', '~> 1.6'
-pod 'Alamofire', '~> 4.5'
+pod 'Alamofire', '~> 4.0'
 pod 'MBProgressHUD’
 pod 'SDWebImage'
 end

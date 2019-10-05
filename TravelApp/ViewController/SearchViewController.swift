@@ -103,7 +103,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
 
 
            let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
-            let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
+            let headerDict: [String:AnyObject] = ["Auth_token":header as AnyObject]
            
             let startDate = startDateTF.text
             let endDate = endDateTF.text
@@ -161,7 +161,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     func loadCities(){
         let header = UserDefaults.standard.value(forKey: AppKey.AuthorizationKey)
-        let headerDict: [String:AnyObject] = ["auth_token":header as AnyObject]
+        let headerDict: [String:AnyObject] = ["Auth_token":header as AnyObject]
         DataManager.getAPIWithHeader(urlString: API.cities, header: headerDict, success: {
             success in
               if let response = success["data"] as? Dictionary<String, Any>, response.count > 0 {
